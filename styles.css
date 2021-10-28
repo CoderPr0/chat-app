@@ -1,0 +1,306 @@
+:root{
+    /* sub-heading */
+    --pale-violet: hsl(276, 100%, 81%);
+    /* left chat */
+    --moderate-violet: hsl(276, 55%, 52%);
+    /* left chat background */
+    --left-chat-bg: hsl(266, 44%, 93%);
+    /* right chat */
+    --desaturated-dark-violet: hsl(271, 15%, 43%);
+    /* placeholder */
+    --grayish-blue: hsl(206, 6%, 79%);
+    /* main heading */
+    --very-dark-desaturated-violet: hsl(271, 36%, 24%);
+    /* paragraph */
+    --dark-grayish-violet: hsl(270, 7%, 64%);
+
+    /* background */
+    --bg-color: hsl(300, 11%, 98%);
+    /* background right */
+    --bg-right: hsl(266, 47%, 97%);
+    /* background left */
+    --gradient-colors: linear-gradient(90deg, hsl(264, 100%, 61%), hsl(293, 100%, 63%)); 
+
+    /* accent */
+    --white: hsl(0, 0%, 100%);
+    /* app background */
+    --light-grayish-violet: hsl(270, 20%, 96%);
+    /* submit button background */
+    --dark-desaturated-violet: hsl(271, 36%, 24%);
+    /* radio button outline */
+    --very-light-magenta: hsl(289, 100%, 72%);
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+
+body{
+    background: var(--bg-color);
+    height: 100vh;
+    padding-top: 6em;
+    position: relative;
+    z-index: -1;
+}
+body::before{
+    content: "";
+    background: var(--gradient-colors);
+    width: 24em;
+    height: 80vh;
+    border-bottom-left-radius: 16em;
+    border-bottom-right-radius: 16em;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+body::after{
+    content: "";
+    background: var(--bg-right);
+    width: 24em;
+    height: 80vh;
+    border-top-left-radius: 16em;
+    border-top-right-radius: 16em;
+    
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+/* __________main__________ */
+main{
+    display: flex;
+    margin: 0 20%;
+}
+
+/* ________phone________ */
+.phone{
+    background: var(--light-grayish-violet);
+    border: 12px solid var(--white);
+    border-radius: 2em;
+    flex-shrink: 0;
+    width: 20em;
+    z-index: 1;
+}
+
+/* __chat header__ */
+.chat-header{
+    background: var(--gradient-colors);
+    display: flex;
+    padding: 1.2em 0.8em 0.6em;
+    border-radius: 1.5em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    position: relative;
+}
+.chat-header::before{
+    content: "";
+    background: var(--white);
+    width: 10em;
+    height: 1em;
+    border-bottom-left-radius: 0.8em;
+    border-bottom-right-radius: 0.8em;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.back-arrow{
+    width: 1.6em;
+    cursor: pointer;
+}
+
+.avatar{
+    width: 2em;
+    cursor: pointer;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    margin-right: 0.4em;
+}
+
+.chat-header h2{
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.chat-header p{
+    color: var(--pale-violet);
+    font-size: 12px;
+}
+
+.ellipsis{
+    width: 1em;
+    cursor: pointer;
+    margin: auto 0 auto auto;
+}
+
+/* __chat__ */
+.chat{
+    padding: 0em 0.8em;
+    position: relative;
+}
+
+.dog-img{
+    display: flex;
+    gap: 2%;
+    width: 66%;
+    margin: 0 0 0 auto;
+}
+
+.dog-img > img{
+    width: 32%;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+.chat p{
+    font-size: 10px;
+}
+
+.walker{
+    background: var(--left-chat-bg);
+    color: var(--moderate-violet);
+    width: 62%;
+    padding: 1em;
+    border-radius: 1em;
+    margin: 0.6em 0;
+}
+
+.client{
+    background: var(--white);
+    color: var(--desaturated-dark-violet);
+    width: 62%;
+    padding: 1em;
+    border-radius: 1em;
+    margin: 0.6em 0 0.6em auto;
+}
+
+.choices{
+    background: var(--gradient-colors);
+    color: var(--white);
+    display: flex;
+    gap: 1em;
+    height: 3em;
+    width: 68%;
+    cursor: pointer;
+
+    padding: 0 1em;
+    border-radius: 1em;
+    border-bottom-left-radius: 0.5em;
+    margin: 0.4em 0;
+}
+
+.radio-check{
+    display: none;
+}
+
+.radio-check:checked ~ .checked{
+    width: 1em;
+    display: block;
+}
+.radio-check:checked ~ .radio-button{
+    display: none;
+}
+
+.radio-button{
+    width: 1.2em;
+    height: 1em;
+    border-radius: 50%;
+    border: solid 1px var(--white);
+    margin: auto 0;
+}
+
+.checked{
+    display: none;
+}
+
+.options{
+    display: flex;
+    width: 100%;
+    margin: auto 0;
+}
+
+.price{
+    font-weight: 700;
+    margin: 0 0 0 auto;
+}
+
+.message-bar > input{
+    width: 100%;
+    height: 3em;
+    padding: 0 2em;
+    border-radius: 1.4em;
+    margin: 0.6em 0;
+}
+
+.chat > img{
+    background: var(--dark-desaturated-violet);
+    width: 2em;
+    cursor: pointer;
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: 0.8em;
+    right: 1em;
+}
+
+/* ________description________ */
+.description{
+    width: 24em;
+    flex-shrink: 0;
+    margin: auto 12%;
+}
+
+.description > h1{
+    color: var(--very-dark-desaturated-violet);
+    margin-bottom: 1em;
+}
+
+.description > p{
+    color: var(--dark-grayish-violet);
+}
+
+
+
+@media(max-width: 1020px){
+    body{
+        height: auto;
+        padding: 2em 0 6em;
+    }
+    body::before{
+        width: 50%;
+        left: -20%;
+    }
+    body::after{
+        width: 50%;
+        right: -20%;
+    }
+
+    /* __________main__________ */
+    main{
+        flex-direction: column;
+        gap: 3em;
+        margin: 0;
+    }
+    /* ________phone________ */
+    .phone{
+        margin: 0 auto;
+    }
+    /* ________description________ */
+    .description{
+        text-align: center;
+        margin: 0 auto;
+    }
+    .description > h1{
+        margin-bottom: 0.4em;
+    }
+}
